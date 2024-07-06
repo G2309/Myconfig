@@ -20,6 +20,8 @@ cmp.setup({
         { name = 'buffer' },
         { name = 'path' },
         { name = 'cmdline' },
+		{ name = 'luasnip' },
+		{ name = 'nvim-copilot' },
     }
 })
 

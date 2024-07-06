@@ -11,13 +11,19 @@ require('config.lsp')
 --  Nvim-cmp 
 require('config.cmp')
 -- 󱘎 Nvim-tree 󱘎
-require('nvim-tree').setup()
+require('config.nvimtree')
 --  Telescope setup 
 require('config.telescope')
 -- Colorizer
 require('colorizer').setup()
--- 󰄛 Nvim Theme 󰄛
+--   Keybindings 
+require('config.keybindings')
+--  Lualine 
+require('config.lualine')
+-- 󰄛 Dashboard 󰄛
+require('config.dashboard-config')
 
+-- 󰄛 Nvim Theme 󰄛
 vim.g.catppuccin_flavour = 'macchiato' 
 require('catppuccin').setup()
 vim.cmd('colorscheme catppuccin')

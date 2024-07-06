@@ -9,4 +9,5 @@ vim.opt.hlsearch = true
 vim.opt.incsearch = true
 vim.opt.hidden = true
 vim.opt.termguicolors = true
-
+vim.g.mapleader = ","
+vim.opt.cursorline = true

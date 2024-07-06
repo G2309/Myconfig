@@ -34,19 +34,16 @@ return require('packer').startup(function()
         as = 'catppuccin' -- Catppuccin color scheme for Neovim
     }
 
+	-- Lua Line
+	use {
+		'nvim-lualine/lualine.nvim',
+		requires = {'nvim-tree/nvim-web-devicons', opt = true }
+	}
+
 	-- Colorizer
-	 use {
-        'norcalli/nvim-colorizer.lua',
-        config = function()
-            require('colorizer').setup({
-            RGB = true,  
-            RRGGBBAA = true,  
-            names = true,  
-            css = true, 
-            mode = 'foreground',
-        })
-        end
-    }
+	 use 'norcalli/nvim-colorizer.lua'
+
+	use 'nvimdev/dashboard-nvim'
 
 end)
 
