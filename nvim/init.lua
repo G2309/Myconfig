@@ -22,8 +22,12 @@ require('config.keybindings')
 require('config.lualine')
 -- 󰄛 Dashboard 󰄛
 require('config.dashboard-config')
+-- 󰉶 Indentation 󰉶 
+require('config.indent')
+--   Discord  
+require('config.discord')
 
 -- 󰄛 Nvim Theme 󰄛
-vim.g.catppuccin_flavour = 'macchiato' 
+vim.g.catppuccin_flavour = 'macchiato'
 require('catppuccin').setup()
 vim.cmd('colorscheme catppuccin')

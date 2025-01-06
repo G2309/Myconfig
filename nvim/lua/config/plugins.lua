@@ -7,6 +7,7 @@ return require('packer').startup(function()
     use 'neovim/nvim-lspconfig' -- Basic LSP configurations
     use 'williamboman/mason.nvim' -- Manager for LSP servers, DAP servers, linters, and formatters
     use 'williamboman/mason-lspconfig.nvim' -- Bridges mason.nvim and nvim-lspconfig
+	use 'ray-x/lsp_signature.nvim' -- Display information about code
 
     -- Autocomplete
     use 'hrsh7th/nvim-cmp' -- Completion engine plugin
@@ -43,7 +44,15 @@ return require('packer').startup(function()
 	-- Colorizer
 	 use 'norcalli/nvim-colorizer.lua'
 
-	use 'nvimdev/dashboard-nvim'
+	 -- Dashboard
+	 use 'nvimdev/dashboard-nvim'
+
+	-- Indentation
+	use "lukas-reineke/indent-blankline.nvim"
+
+	-- Discord
+	use 'andweeb/presence.nvim'
+
 
 end)
 

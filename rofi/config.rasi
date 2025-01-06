@@ -1,11 +1,10 @@
-
 configuration	{
 	display-drun: "Applications: ";
 	drun-display-format: "{icon} {name}";
-	font: "Hack Nerd Font 18";
+	font: "FiraCode Nerd Font 18";
 	icon-theme: "Papirus-Dark";
 	show-icons: true;
-	matching: "fuzzy";
+	matching: "fuzzy"; 
 
 }
 
@@ -31,17 +30,14 @@ window		{
 
 element		{
 	padding: 8 12;
-	backgroud-color: @bg;
-	text-color: @fg-alt;
+	text-color: #5b6078;
 }
 
 element selected {
-	text-color: @fg-1;
-	backgroud-color: @bg-alt;
+	text-color: #c6a0f6;
 }
 
 element-text	{
-	backgroud-color: @fg;
 	text-color: inherit;
 	vertical-align: 0.5;
 }
@@ -49,12 +45,10 @@ element-text	{
 element-icon	{
 	size: 35;
 	padding: 10 10 10 10;
-	backgroud-color: @bg;
 }
 
 entry	 	{
 	padding: 12;
-	backgroud-color: @bg-alt;
 	text-color: @fg; 
 }
 
@@ -71,7 +65,6 @@ listview 	{
 
 mainbox		{
 	children: [inputbar, listview];
-	backgroud-color: @bg-1;
 }
 
 prompt 		{
