@@ -1,0 +1,10 @@
+font="FiraCode Nerd Font"
+screenshots
+fade-in=1
+clock
+datesrt=%a, #e of #B
+indicator
+effect-blur
+indicator-thickness=20
+indicator-radius=225
+
