@@ -1,33 +1,12 @@
--- init.lua
+vim.opt.rtp:prepend("~/.local/share/nvim/lazy/lazy.nvim")
 
---  Vim setup 
-require('setup')
---  Vim settings 
-require('config.vim')
---  Plugin setup 
-require('config.plugins')
---  LSP config 
-require('config.lsp')
---  Nvim-cmp 
-require('config.cmp')
--- 󱘎 Nvim-tree 󱘎
-require('config.nvimtree')
---  Telescope setup 
-require('config.telescope')
--- Colorizer
-require('colorizer').setup()
---   Keybindings 
-require('config.keybindings')
---  Lualine 
-require('config.lualine')
--- 󰄛 Dashboard 󰄛
-require('config.dashboard-config')
--- 󰉶 Indentation 󰉶 
-require('config.indent')
---   Discord  
-require('config.discord')
+-- Core settings
+require("core.options")
+require("core.keymaps")
+require("core.autocmds")
 
--- 󰄛 Nvim Theme 󰄛
-vim.g.catppuccin_flavour = 'macchiato'
-require('catppuccin').setup()
-vim.cmd('colorscheme catppuccin')
+-- Plugin manager
+require("plugins")
+
+-- Theme
+vim.cmd.colorscheme("catppuccin")
