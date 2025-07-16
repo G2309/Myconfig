@@ -103,6 +103,11 @@ else
     fi
 fi
 
+if ask_install "Grub"; then
+	sudo cp "$REPO_DIR/grub" /etc/default/grub
+	sudo grub-mkconfig -o /boot/grub/grub.cfg
+fi
+
 # Zsh y Powerlevel10k
 if ask_install "Zsh + Powerlevel10k"; then
     sudo pacman -S --noconfirm zsh
