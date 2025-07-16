@@ -44,7 +44,7 @@ link_config "$REPO_DIR/Scripts" "$HOME/Scripts"
 chmod +x "$HOME"/Scripts/*
 
 mkdir "$HOME/Pictures"
-cp "$REPO_DIR/Wallpaper" "$HOME/Pictures/Wallpaper"
+cp -r "$REPO_DIR/Wallpaper" "$HOME/Pictures/Wallpaper"
 
 read -rp "¿Estás usando Wayland? (s/n): " respuesta
 if [[ "$respuesta" == "s" ]]; then
@@ -58,6 +58,7 @@ if [[ "$respuesta" == "s" ]]; then
     fi
 
     if ask_install "Neovim"; then
+		git clone https://github.com/folke/lazy.nvim ~/.local/share/nvim/lazy/lazy.nvim
         link_config "$REPO_DIR/nvim" "$HOME/.config/nvim"
     fi
 
