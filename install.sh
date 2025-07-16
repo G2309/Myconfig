@@ -1,5 +1,7 @@
 #!/bin/bash
 
+set -e
+
 # Rutas
 REPO_DIR="$(cd "$(dirname "$0")" && pwd)"
 
@@ -41,7 +43,8 @@ link_config() {
 link_config "$REPO_DIR/Scripts" "$HOME/Scripts"
 chmod +x "$HOME"/Scripts/*
 
-link_config "$REPO_DIR/Wallpaper" "$HOME/Pictures/Wallpaper"
+mkdir "$HOME/Pictures"
+cp "$REPO_DIR/Wallpaper" "$HOME/Pictures/Wallpaper"
 
 read -rp "¿Estás usando Wayland? (s/n): " respuesta
 if [[ "$respuesta" == "s" ]]; then
