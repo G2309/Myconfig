@@ -1,0 +1,31 @@
+#!/bin/bash
+WALL="$1"
+OUT_DIR="$HOME/.config/hypr/colors"
+mkdir -p "$OUT_DIR"
+
+hex_to_dec() { printf "%d" "0x$1"; }
+dec_to_hex() { printf "%02X" "$1"; }
+get_complementary() {
+    local hex=${1#"#"}
+    local r=$(hex_to_dec "${hex:0:2}")
+    local g=$(hex_to_dec "${hex:2:2}")
+    local b=$(hex_to_dec "${hex:4:2}")
+    local rc=$((255-r))
+    local gc=$((255-g))
+    local bc=$((255-b))
+    echo "#$(dec_to_hex "$rc")$(dec_to_hex "$gc")$(dec_to_hex "$bc")"
+}
+
+COL_COL=$(colorz "$WALL" | head -n 1 | awk '{for (i=1;i<=NF;i++) if ($i ~ /^#/) print i; exit}')
+
+COLORS=$(colorz "$WALL" | head -n 3 | awk -v col="$COL_COL" '{print $col}')
+
+i=1
+for C in $COLORS; do
+    [ -n "$C" ] || continue
+    echo "$C" > "$OUT_DIR/color$i"
+    COMP=$(get_complementary "$C")
+    echo "$COMP" > "$OUT_DIR/color${i}_comp"
+    ((i++))
+done
+

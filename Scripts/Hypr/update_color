@@ -1,0 +1,24 @@
+#!/bin/bash
+WALL="$1"
+COLOR_DIR="$HOME/.config/hypr/colors"
+TEMPLATE="$HOME/.config/waybar/style.css.template"
+OUT="$HOME/.config/waybar/style.css"
+
+~/Scripts/Colors/get_color "$WALL"
+
+C1=$(cat "$COLOR_DIR/color1" 2>/dev/null)
+C1C=$(cat "$COLOR_DIR/color1_comp" 2>/dev/null)
+C2=$(cat "$COLOR_DIR/color2" 2>/dev/null)
+C2C=$(cat "$COLOR_DIR/color2_comp" 2>/dev/null)
+C3=$(cat "$COLOR_DIR/color3" 2>/dev/null)
+C3C=$(cat "$COLOR_DIR/color3_comp" 2>/dev/null)
+
+sed -e "s|\$COLOR1_COMP|$C1C|g" \
+    -e "s|\$COLOR1|$C1|g" \
+    -e "s|\$COLOR2_COMP|$C2C|g" \
+    -e "s|\$COLOR2|$C2|g" \
+    -e "s|\$COLOR3_COMP|$C3C|g" \
+    -e "s|\$COLOR3|$C3|g" \
+    "$TEMPLATE" > "$OUT"
+
+pkill -SIGUSR2 waybar

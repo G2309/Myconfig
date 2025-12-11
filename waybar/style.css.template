@@ -1,0 +1,33 @@
+* {
+    border: none;
+    font-family: "Fira Code";
+    font-size: 11px;
+    border-radius: 20px;
+}
+
+window#waybar {
+    background: rgba(0, 0, 0, 0);
+}
+
+.modules-right, .modules-left, .modules-center {
+    background-color: $COLOR1_COMP;
+    margin: 2px 10px;
+    color: $COLOR1;
+}
+
+#clock, #bluetooth, #custom-power, #custom-wallpaper {
+    background-color: $COLOR2_COMP;
+    border-radius: 100px;
+    margin: 5px;
+    padding: 3px 8px;
+    color: $COLOR2;
+}
+
+#pulseaudio, #battery {
+    background-color: $COLOR3_COMP;
+    border-radius: 100px;
+    margin: 5px;
+    padding: 3px 8px;
+    color: $COLOR3;
+}
+
